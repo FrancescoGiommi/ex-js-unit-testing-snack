@@ -31,3 +31,17 @@ test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido
   expect(() => createSlug("")).toThrow("Titolo non valido");
   expect(() => createSlug(null)).toThrow("Titolo non valido");
 });
+
+//! Snack 7
+test("La funzione findPostById restituisce il post corretto dato l'array di post e l'id", () => {
+  expect(findPostById(posts, 1)).toEqual({
+    id: 1,
+    title: "Post 1",
+    slug: "Questo è il primo post",
+  });
+
+  expect(findPostById(posts, 4)).toBe(null);
+  expect(() => findPostById([50, 40, 30], 2)).toThrow(
+    "array posts non è nel formato corretto"
+  );
+});
