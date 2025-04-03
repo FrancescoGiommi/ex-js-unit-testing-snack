@@ -1,4 +1,10 @@
-const { getInitials, createSlug, average, isPalindrome } = require("./snack");
+const {
+  getInitials,
+  createSlug,
+  average,
+  isPalindrome,
+  findPostById,
+} = require("./snack");
 
 //! Snack 1
 
@@ -31,6 +37,24 @@ test("La funzione createSlug lancia un errore se il titolo è vuoto o non valido
   expect(() => createSlug("")).toThrow("Titolo non valido");
   expect(() => createSlug(null)).toThrow("Titolo non valido");
 });
+
+const posts = [
+  {
+    id: 1,
+    title: "Post 1",
+    slug: "Questo è il primo post",
+  },
+  {
+    id: 2,
+    title: "Post 2",
+    slug: "Questo è il secondo post",
+  },
+  {
+    id: 3,
+    title: "Post 3",
+    slug: "Questo è il terzo post",
+  },
+];
 
 //! Snack 7
 test("La funzione findPostById restituisce il post corretto dato l'array di post e l'id", () => {

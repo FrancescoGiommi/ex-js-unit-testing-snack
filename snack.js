@@ -29,4 +29,29 @@ function isPalindrome(world) {
   const joinWorld = reverseWorld.join("");
   return world === joinWorld;
 }
-module.exports = { getInitials, createSlug, average, isPalindrome };
+
+//! Snack 7
+function findPostById(posts, id) {
+  if (isNaN(id)) {
+    throw new Error(`"${id}" non valido`);
+  }
+
+  posts.forEach((post) => {
+    if (
+      post.id === undefined ||
+      post.title === undefined ||
+      post.slug === undefined
+    ) {
+      throw new Error("array posts non è nel formato corretto");
+    }
+  });
+
+  return posts.find((post) => post.id === id) || null;
+}
+module.exports = {
+  getInitials,
+  createSlug,
+  average,
+  isPalindrome,
+  findPostById,
+};
