@@ -11,4 +11,14 @@ function createSlug(string) {
   }
   return string.toLowerCase().replaceAll(" ", "-");
 }
-module.exports = { getInitials, createSlug };
+
+//! Snack 3
+function average() {
+  const numbers = [1, 2, 3, 4, 5];
+  const sum = numbers.reduce((acc, num) => {
+    return acc + num;
+  }, 0);
+  const avg = sum / numbers.length;
+  return avg;
+}
+module.exports = { getInitials, createSlug, average };
