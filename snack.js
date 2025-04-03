@@ -21,4 +21,12 @@ function average() {
   const avg = sum / numbers.length;
   return avg;
 }
-module.exports = { getInitials, createSlug, average };
+
+//! Snack 5
+function isPalindrome(world) {
+  const divideWorld = world.split(" ");
+  const reverseWorld = divideWorld.reverse();
+  const joinWorld = reverseWorld.join("");
+  return world === joinWorld;
+}
+module.exports = { getInitials, createSlug, average, isPalindrome };
